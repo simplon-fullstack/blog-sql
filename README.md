@@ -147,185 +147,237 @@ Blog avec sql
 
 ## DELETE: SUPPRIMER UNE LIGNE
 
-https://sql.sh/cours/delete
+    https://sql.sh/cours/delete
 
-POUR SUPPRIMER UNE LIGNE
+    POUR SUPPRIMER UNE LIGNE
 
-DELETE FROM `contact` 
-WHERE 
-`contact`.`id` = 3
+    DELETE FROM `contact` 
+    WHERE 
+    `contact`.`id` = 3
 
-ATTENTION: NE PAS OUBLIER LE SELECTEUR
-=> CLAUSE WHERE
+    ATTENTION: NE PAS OUBLIER LE SELECTEUR
+    => CLAUSE WHERE
 
-DELETE FROM contact
+    DELETE FROM contact
 
-=> SI JE NE METS PAS DE SELECTEUR
-=> JE SUPPRIME TOUTES LES LIGNES !!!
-=> (ET ON N'A PAS DE CORBEILLE POUR SE RATTRAPER...)
+    => SI JE NE METS PAS DE SELECTEUR
+    => JE SUPPRIME TOUTES LES LIGNES !!!
+    => (ET ON N'A PAS DE CORBEILLE POUR SE RATTRAPER...)
 
-DELETE FROM contact
-WHERE id = 4
+    DELETE FROM contact
+    WHERE id = 4
 
-SUPER IMPORTANT DE BIEN CHOISIR SON SELECTEUR AVEC LA CLAUSE WHERE
+    SUPER IMPORTANT DE BIEN CHOISIR SON SELECTEUR AVEC LA CLAUSE WHERE
 
-NOTE: ON POURRAIT ECRIRE DES SELECTEURS PLUS COMPLEXES
-(SUR D'AUTRES COLONNES QUE id)
+    NOTE: ON POURRAIT ECRIRE DES SELECTEURS PLUS COMPLEXES
+    (SUR D'AUTRES COLONNES QUE id)
 
-DELETE FROM contact
-WHERE nom = 'spammeur'
+    DELETE FROM contact
+    WHERE nom = 'spammeur'
 
-=> ON VERRA PLUS TARD TOUTES LES POSSIBILITES 
-    DE SELECTEUR AVEC LA CLAUSE WHERE
+    => ON VERRA PLUS TARD TOUTES LES POSSIBILITES 
+        DE SELECTEUR AVEC LA CLAUSE WHERE
 
 ## READ: RETROUVER UN ENSEMBLE D'INFORMATIONS DEPUIS UNE TABLE
 
-https://sql.sh/cours/select
+    https://sql.sh/cours/select
 
-REQUETE LA PLUS SIMPLE POUR LIRE TOUTES LES INFORMATIONS D'UNE TABLE
-(TOUTES LES LIGNES ET TOUTES LES COLONNES)
+    REQUETE LA PLUS SIMPLE POUR LIRE TOUTES LES INFORMATIONS D'UNE TABLE
+    (TOUTES LES LIGNES ET TOUTES LES COLONNES)
 
-SELECT * FROM `blog`
+    SELECT * FROM `blog`
 
-PLUS SIMPLIFIEE
+    PLUS SIMPLIFIEE
 
-SELECT * FROM blog
+    SELECT * FROM blog
 
-=> * TOUTES LES COLONNES
-=> ON POURRAIT PRECISER LES COLONNES QUI NOUS INTERESSENT
+    => * TOUTES LES COLONNES
+    => ON POURRAIT PRECISER LES COLONNES QUI NOUS INTERESSENT
 
-SELECT titre FROM blog
+    SELECT titre FROM blog
 
-=> SI JE VEUX SEULEMENT LA COLONNE titre
-
-
-SELECT titre FROM blog
-WHERE id = 3
-
-=> SI JE VEUX SEULEMENT LA COLONNE titre DE LA LIGNE id = 3
-
-ON PEUT AUSSI TRIER SUIVANT UNE OU PLUSIEURS COLONNES
-EN AJOUTANT ORDER BY
-
-DESC    => TRI DECROISSANT
-ASC     => TRI CROISSANT
+    => SI JE VEUX SEULEMENT LA COLONNE titre
 
 
-SELECT * FROM blog
-ORDER BY id DESC
+    SELECT titre FROM blog
+    WHERE id = 3
 
-SELECT * FROM blog
-ORDER BY titre ASC, id DESC
+    => SI JE VEUX SEULEMENT LA COLONNE titre DE LA LIGNE id = 3
 
-=> IL Y A ENORMEMENT DE POSSIBILITES POUR LE SELECT AVEC LES FILTRES QU'ON PEUT RAJOUTER
-=> C'EST VOTRE BOULOT DE DEVELOPPEUR WEB
+    ON PEUT AUSSI TRIER SUIVANT UNE OU PLUSIEURS COLONNES
+    EN AJOUTANT ORDER BY
+
+    DESC    => TRI DECROISSANT
+    ASC     => TRI CROISSANT
+
+
+    SELECT * FROM blog
+    ORDER BY id DESC
+
+    SELECT * FROM blog
+    ORDER BY titre ASC, id DESC
+
+    => IL Y A ENORMEMENT DE POSSIBILITES POUR LE SELECT AVEC LES FILTRES QU'ON PEUT RAJOUTER
+    => C'EST VOTRE BOULOT DE DEVELOPPEUR WEB
 
 
 ## UPDATE
 
-https://sql.sh/cours/update
+    https://sql.sh/cours/update
 
 
-UPDATE `blog` 
-SET 
-`titre` = 'titre1120' 
-WHERE 
-`blog`.`id` = 4;
+    UPDATE `blog` 
+    SET 
+    `titre` = 'titre1120' 
+    WHERE 
+    `blog`.`id` = 4;
 
-VERSION SIMPLIFIEE
+    VERSION SIMPLIFIEE
 
-UPDATE blog 
-SET 
-titre = 'titre1120' 
-WHERE 
-id = 4;
+    UPDATE blog 
+    SET 
+    titre = 'titre1120' 
+    WHERE 
+    id = 4;
 
-=> TRES IMPORTANT: NE PAS OUBLIER LE SELECTEUR AVEC LA CLAUSE WHERE
-
-
-UPDATE blog 
-SET 
-titre = 'titre1120' 
+    => TRES IMPORTANT: NE PAS OUBLIER LE SELECTEUR AVEC LA CLAUSE WHERE
 
 
-=> ATTENTION SI ON NE MET PAS DE SELECTEUR AVEC UNE CLAUSE WHERE
-=> TOUTES LES LIGNES SONT MODIFIEES
+    UPDATE blog 
+    SET 
+    titre = 'titre1120' 
 
-UPDATE blog 
-SET 
-titre = 'titre1120',
-contenu = 'nouveau contenu',
-photo = 'assets/images/photo4.jpg' 
-WHERE 
-id = 4;
 
-POUR MODIFIER PLUSIEURS COLONNES, 
-ON SEPARE CHAQUE COLONNE AVEC UNE VIRGULE
-ATTENTION: PAS DE VIRGULE APRES LA DERNIERE COLONNE
+    => ATTENTION SI ON NE MET PAS DE SELECTEUR AVEC UNE CLAUSE WHERE
+    => TOUTES LES LIGNES SONT MODIFIEES
+
+    UPDATE blog 
+    SET 
+    titre = 'titre1120',
+    contenu = 'nouveau contenu',
+    photo = 'assets/images/photo4.jpg' 
+    WHERE 
+    id = 4;
+
+    POUR MODIFIER PLUSIEURS COLONNES, 
+    ON SEPARE CHAQUE COLONNE AVEC UNE VIRGULE
+    ATTENTION: PAS DE VIRGULE APRES LA DERNIERE COLONNE
 
 ### EXERCICES
 
-INSERER UNE NOUVELLE LIGNES DANS LA TABLE SQL contact
+    INSERER UNE NOUVELLE LIGNES DANS LA TABLE SQL contact
 
-INSERT INTO contact
-(nom, email, message)
-VALUES
-('albert', 'albert@nomail.me', 'salut bébert')
+    INSERT INTO contact
+    (nom, email, message)
+    VALUES
+    ('albert', 'albert@nomail.me', 'salut bébert')
 
-SI JE VEUX CHANGER LE MAIL ET LE MESSAGE
+    SI JE VEUX CHANGER LE MAIL ET LE MESSAGE
 
-UPDATE contact
-SET
-email = 'albert13@nomail.me',
-message = 'adieu bébert'
-WHERE
-id = 5
+    UPDATE contact
+    SET
+    email = 'albert13@nomail.me',
+    message = 'adieu bébert'
+    WHERE
+    id = 5
 
 
-SI ON VEUT EFFACER LA LIGNE
+    SI ON VEUT EFFACER LA LIGNE
 
-DELETE FROM contact
-WHERE id = 5
+    DELETE FROM contact
+    WHERE id = 5
 
 ## PROJET SIT BLOG AVEC SQL
 
-ON DIT QU'UN CLIENT VEUT UN BLOG
-(Persona => PROFILS VIRTUELS D'UTILISATEUR OU DE CLIENTS...)
+    ON DIT QU'UN CLIENT VEUT UN BLOG
+    (Persona => PROFILS VIRTUELS D'UTILISATEUR OU DE CLIENTS...)
 
-CREER UNE FICHE POUR DECRIRE UNE VRAIE PERSONNE
+    CREER UNE FICHE POUR DECRIRE UNE VRAIE PERSONNE
 
-Nom: Florence
-Age: 22 ans
-Adresse: Marseille
+    Nom: Florence
+    Age: 22 ans
+    Adresse: Marseille
 
-Pourquoi elle veut un blog ?
-Elle veut gagner de l'argent
-Publicité avec Google 
-=> on gagne de l'argent quand un visiteur clique sur une bannière
+    Pourquoi elle veut un blog ?
+    Elle veut gagner de l'argent
+    Publicité avec Google 
+    => on gagne de l'argent quand un visiteur clique sur une bannière
 
-Partenariat avec des marques
-=> rédiger des articles sponsorisés
+    Partenariat avec des marques
+    => rédiger des articles sponsorisés
 
-etc...
+    etc...
 
-sur quel sujet ?
-Les potins/rumeurs/scandales sur les stars autour de Marseille
-(OM, plus belle la vie, etc...)
+    sur quel sujet ?
+    Les potins/rumeurs/scandales sur les stars autour de Marseille
+    (OM, plus belle la vie, etc...)
 
-* PARTIE PUBLIQUE (FRONT OFFICE)
+    * PARTIE PUBLIQUE (FRONT OFFICE)
 
-Accueil/Blog        index.php
-Contact             contact.php
-Crédits             credits.php
-Mentions Légales    mentions-legales.php
+    Accueil/Blog        index.php
+    Contact             contact.php
+    Crédits             credits.php
+    Mentions Légales    mentions-legales.php
 
-* PARTIE ADMIN (BACK-OFFICE)
+    * PARTIE ADMIN (BACK-OFFICE)
 
-Admin Blog          admin-blog.php
+    Admin Blog          admin-blog.php
 
-ETAPE SUIVANTE: CREER LES MAQUETTES HTML, CSS
+    ETAPE SUIVANTE: CREER LES MAQUETTES HTML, CSS
 
-ENSUITE, ON PEUT CODER SA PAGE index.php
+    ENSUITE, ON PEUT CODER SA PAGE index.php
+
+
+## EXERCICE SQL
+
+
+    ALLER SUR PHPMYADMIN
+
+    http://localhost/phpmyadmin/
+
+    (L'URL PEUT VARIER SUIVANT VOS SERVEURS WEB...)
+
+    CREER UNE DATABASE blog-sql
+    AVEC LE CHARSET utf8mb4_general_ci
+
+    DANS LA DATABASE blog-sql, CREER 3 TABLES
+
+    * TABLE SQL newsletter
+        AVEC COMME COLONNES
+        id      INT             INDEX=PRIMARY   AUTO_INCREMENT (A_I)
+        nom     VARCHAR (160)
+        email   VARCHAR (160)
+
+    * TABLE SQL contact
+        AVEC COMME COLONNES
+        id          INT             INDEX=PRIMARY   AUTO_INCREMENT (A_I)
+        nom         VARCHAR (160)
+        email       VARCHAR (160)
+        message     TEXT
+
+    * TABLE SQL blog
+        AVEC COMME COLONNES
+        id          INT             INDEX=PRIMARY   AUTO_INCREMENT (A_I)
+        titre       VARCHAR (160)
+        contenu     TEXT
+        photo       VARCHAR (160)
+
+
+    * VERIFIER QUE CHAQUE TABLE ET CHAQUE COLONNE EST BIEN CREEE
+    * INSERER QUELQUES LIGNES AVEC PHPMYADMIN (POUR TESTER)
+
+    * EXERCICES CRUD
+
+    * CREATE
+    * CREER DES REQUETES SQL POUR INSERER DES LIGNES DANS CHAQUE TABLE
+
+    * READ
+    * CREER DES REQUETES SQL POUR LIRE DES LIGNES DANS CHAQUE TABLE
+
+
+
+
+
 
 
 
