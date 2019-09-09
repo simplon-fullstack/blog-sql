@@ -84,6 +84,7 @@ Blog avec sql
 
 ## CREATE AVEC SQL: INSERT INTO
 
+    https://sql.sh/cours/insert-into
 
     CODE SQL POUR INSERER UNE NOUVELLE LIGNE DANS LA TABLE blog
     => ATTENTION AUX BACKTICK ET AUX QUOTES
