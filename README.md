@@ -145,6 +145,198 @@ Blog avec sql
     ('fatoumata', 'fatoumata@gmail.com', 'coucou c\'est moi');
 
 
+## DELETE: SUPPRIMER UNE LIGNE
+
+https://sql.sh/cours/delete
+
+POUR SUPPRIMER UNE LIGNE
+
+DELETE FROM `contact` 
+WHERE 
+`contact`.`id` = 3
+
+ATTENTION: NE PAS OUBLIER LE SELECTEUR
+=> CLAUSE WHERE
+
+DELETE FROM contact
+
+=> SI JE NE METS PAS DE SELECTEUR
+=> JE SUPPRIME TOUTES LES LIGNES !!!
+=> (ET ON N'A PAS DE CORBEILLE POUR SE RATTRAPER...)
+
+DELETE FROM contact
+WHERE id = 4
+
+SUPER IMPORTANT DE BIEN CHOISIR SON SELECTEUR AVEC LA CLAUSE WHERE
+
+NOTE: ON POURRAIT ECRIRE DES SELECTEURS PLUS COMPLEXES
+(SUR D'AUTRES COLONNES QUE id)
+
+DELETE FROM contact
+WHERE nom = 'spammeur'
+
+=> ON VERRA PLUS TARD TOUTES LES POSSIBILITES 
+    DE SELECTEUR AVEC LA CLAUSE WHERE
+
+## READ: RETROUVER UN ENSEMBLE D'INFORMATIONS DEPUIS UNE TABLE
+
+https://sql.sh/cours/select
+
+REQUETE LA PLUS SIMPLE POUR LIRE TOUTES LES INFORMATIONS D'UNE TABLE
+(TOUTES LES LIGNES ET TOUTES LES COLONNES)
+
+SELECT * FROM `blog`
+
+PLUS SIMPLIFIEE
+
+SELECT * FROM blog
+
+=> * TOUTES LES COLONNES
+=> ON POURRAIT PRECISER LES COLONNES QUI NOUS INTERESSENT
+
+SELECT titre FROM blog
+
+=> SI JE VEUX SEULEMENT LA COLONNE titre
+
+
+SELECT titre FROM blog
+WHERE id = 3
+
+=> SI JE VEUX SEULEMENT LA COLONNE titre DE LA LIGNE id = 3
+
+ON PEUT AUSSI TRIER SUIVANT UNE OU PLUSIEURS COLONNES
+EN AJOUTANT ORDER BY
+
+DESC    => TRI DECROISSANT
+ASC     => TRI CROISSANT
+
+
+SELECT * FROM blog
+ORDER BY id DESC
+
+SELECT * FROM blog
+ORDER BY titre ASC, id DESC
+
+=> IL Y A ENORMEMENT DE POSSIBILITES POUR LE SELECT AVEC LES FILTRES QU'ON PEUT RAJOUTER
+=> C'EST VOTRE BOULOT DE DEVELOPPEUR WEB
+
+
+## UPDATE
+
+https://sql.sh/cours/update
+
+
+UPDATE `blog` 
+SET 
+`titre` = 'titre1120' 
+WHERE 
+`blog`.`id` = 4;
+
+VERSION SIMPLIFIEE
+
+UPDATE blog 
+SET 
+titre = 'titre1120' 
+WHERE 
+id = 4;
+
+=> TRES IMPORTANT: NE PAS OUBLIER LE SELECTEUR AVEC LA CLAUSE WHERE
+
+
+UPDATE blog 
+SET 
+titre = 'titre1120' 
+
+
+=> ATTENTION SI ON NE MET PAS DE SELECTEUR AVEC UNE CLAUSE WHERE
+=> TOUTES LES LIGNES SONT MODIFIEES
+
+UPDATE blog 
+SET 
+titre = 'titre1120',
+contenu = 'nouveau contenu',
+photo = 'assets/images/photo4.jpg' 
+WHERE 
+id = 4;
+
+POUR MODIFIER PLUSIEURS COLONNES, 
+ON SEPARE CHAQUE COLONNE AVEC UNE VIRGULE
+ATTENTION: PAS DE VIRGULE APRES LA DERNIERE COLONNE
+
+### EXERCICES
+
+INSERER UNE NOUVELLE LIGNES DANS LA TABLE SQL contact
+
+INSERT INTO contact
+(nom, email, message)
+VALUES
+('albert', 'albert@nomail.me', 'salut bébert')
+
+SI JE VEUX CHANGER LE MAIL ET LE MESSAGE
+
+UPDATE contact
+SET
+email = 'albert13@nomail.me',
+message = 'adieu bébert'
+WHERE
+id = 5
+
+
+SI ON VEUT EFFACER LA LIGNE
+
+DELETE FROM contact
+WHERE id = 5
+
+## PROJET SIT BLOG AVEC SQL
+
+ON DIT QU'UN CLIENT VEUT UN BLOG
+(Persona => PROFILS VIRTUELS D'UTILISATEUR OU DE CLIENTS...)
+
+CREER UNE FICHE POUR DECRIRE UNE VRAIE PERSONNE
+
+Nom: Florence
+Age: 22 ans
+Adresse: Marseille
+
+Pourquoi elle veut un blog ?
+Elle veut gagner de l'argent
+Publicité avec Google 
+=> on gagne de l'argent quand un visiteur clique sur une bannière
+
+Partenariat avec des marques
+=> rédiger des articles sponsorisés
+
+etc...
+
+sur quel sujet ?
+Les potins/rumeurs/scandales sur les stars autour de Marseille
+(OM, plus belle la vie, etc...)
+
+* PARTIE PUBLIQUE (FRONT OFFICE)
+
+Accueil/Blog        index.php
+Contact             contact.php
+Crédits             credits.php
+Mentions Légales    mentions-legales.php
+
+* PARTIE ADMIN (BACK-OFFICE)
+
+Admin Blog          admin-blog.php
+
+ETAPE SUIVANTE: CREER LES MAQUETTES HTML, CSS
+
+ENSUITE, ON PEUT CODER SA PAGE index.php
+
+
+
+
+
+
+
+
+
+
+
 
 
 
