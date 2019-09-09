@@ -89,29 +89,40 @@ Blog avec sql
     CODE SQL POUR INSERER UNE NOUVELLE LIGNE DANS LA TABLE blog
     => ATTENTION AUX BACKTICK ET AUX QUOTES
 
+```sql
+
     INSERT INTO `blog` 
     (`id`, `titre`, `contenu`, `photo`) 
     VALUES 
     (NULL, 'titre1013', 'contenu1013', 'assets/images/photo1.jpg');
 
+```
     => ON POURRA UTILISER UNE VERSION SIMPLIFIEE
     => IL FAUT CREER DES NOMS DE TABLES ET DE COLONNES SIMPLES
     => (PAS DE CARACTERE BIZARRE NI D'ESPACE)
+
+```sql
 
     INSERT INTO blog 
     (id, titre, contenu, photo) 
     VALUES 
     (NULL, 'titre1014', 'contenu1014', 'assets/images/photo2.jpg');
 
+```
+
 
     => VERSION ENCORE PLUS SIMPLIFIEE
     => C'EST MySQL QUI GERE LA COLONNE id
     => JE N'AI PAS BESOIN DE M'EN OCCUPER ;-p
 
+```sql
+
     INSERT INTO blog 
     (titre, contenu, photo) 
     VALUES 
     ('titre1015', 'contenu1015', 'assets/images/photo3.jpg');
+
+```
 
 
     EXERCICE: SI JE VEUX INSERER DANS LA TABLE newsletter
@@ -121,10 +132,14 @@ Blog avec sql
 
     EN SQL:
 
+```sql
+
     INSERT INTO newsletter
     (nom, email)
     VALUES
     ('rihanna', 'rihanna@gmail.com')
+
+```
 
 
     => IL FAUT QUE NOTRE CODE PHP CREE CE CODE SQL
@@ -139,11 +154,14 @@ Blog avec sql
 
     EN SQL
 
+```sql
+
     INSERT INTO contact
     (nom, email, message)
     VALUES
     ('fatoumata', 'fatoumata@gmail.com', 'coucou c\'est moi');
 
+```
 
 ## DELETE: SUPPRIMER UNE LIGNE
 
@@ -151,29 +169,49 @@ Blog avec sql
 
     POUR SUPPRIMER UNE LIGNE
 
+```sql
+
     DELETE FROM `contact` 
     WHERE 
     `contact`.`id` = 3
 
+```
+
+
     ATTENTION: NE PAS OUBLIER LE SELECTEUR
     => CLAUSE WHERE
 
+```sql
+
     DELETE FROM contact
+
+```
+
 
     => SI JE NE METS PAS DE SELECTEUR
     => JE SUPPRIME TOUTES LES LIGNES !!!
     => (ET ON N'A PAS DE CORBEILLE POUR SE RATTRAPER...)
 
+```sql
+
     DELETE FROM contact
     WHERE id = 4
+
+```
+
 
     SUPER IMPORTANT DE BIEN CHOISIR SON SELECTEUR AVEC LA CLAUSE WHERE
 
     NOTE: ON POURRAIT ECRIRE DES SELECTEURS PLUS COMPLEXES
     (SUR D'AUTRES COLONNES QUE id)
 
+```sql
+
     DELETE FROM contact
     WHERE nom = 'spammeur'
+
+```
+
 
     => ON VERRA PLUS TARD TOUTES LES POSSIBILITES 
         DE SELECTEUR AVEC LA CLAUSE WHERE
@@ -185,22 +223,39 @@ Blog avec sql
     REQUETE LA PLUS SIMPLE POUR LIRE TOUTES LES INFORMATIONS D'UNE TABLE
     (TOUTES LES LIGNES ET TOUTES LES COLONNES)
 
+```sql
+
     SELECT * FROM `blog`
+
+```
 
     PLUS SIMPLIFIEE
 
+```sql
+
     SELECT * FROM blog
+
+```
+
 
     => * TOUTES LES COLONNES
     => ON POURRAIT PRECISER LES COLONNES QUI NOUS INTERESSENT
 
+```sql
+
     SELECT titre FROM blog
+
+```
 
     => SI JE VEUX SEULEMENT LA COLONNE titre
 
 
+```sql
+
     SELECT titre FROM blog
     WHERE id = 3
+
+```
 
     => SI JE VEUX SEULEMENT LA COLONNE titre DE LA LIGNE id = 3
 
@@ -211,11 +266,19 @@ Blog avec sql
     ASC     => TRI CROISSANT
 
 
+```sql
+
     SELECT * FROM blog
     ORDER BY id DESC
 
+```
+
+```sql
+
     SELECT * FROM blog
     ORDER BY titre ASC, id DESC
+
+```
 
     => IL Y A ENORMEMENT DE POSSIBILITES POUR LE SELECT AVEC LES FILTRES QU'ON PEUT RAJOUTER
     => C'EST VOTRE BOULOT DE DEVELOPPEUR WEB
@@ -226,13 +289,20 @@ Blog avec sql
     https://sql.sh/cours/update
 
 
+```sql
+
     UPDATE `blog` 
     SET 
     `titre` = 'titre1120' 
     WHERE 
     `blog`.`id` = 4;
 
+```
+
+
     VERSION SIMPLIFIEE
+
+```sql
 
     UPDATE blog 
     SET 
@@ -240,16 +310,24 @@ Blog avec sql
     WHERE 
     id = 4;
 
+```
+
     => TRES IMPORTANT: NE PAS OUBLIER LE SELECTEUR AVEC LA CLAUSE WHERE
 
+
+```sql
 
     UPDATE blog 
     SET 
     titre = 'titre1120' 
 
+```
+
 
     => ATTENTION SI ON NE MET PAS DE SELECTEUR AVEC UNE CLAUSE WHERE
     => TOUTES LES LIGNES SONT MODIFIEES
+
+```sql
 
     UPDATE blog 
     SET 
@@ -259,6 +337,8 @@ Blog avec sql
     WHERE 
     id = 4;
 
+```
+
     POUR MODIFIER PLUSIEURS COLONNES, 
     ON SEPARE CHAQUE COLONNE AVEC UNE VIRGULE
     ATTENTION: PAS DE VIRGULE APRES LA DERNIERE COLONNE
@@ -267,12 +347,18 @@ Blog avec sql
 
     INSERER UNE NOUVELLE LIGNES DANS LA TABLE SQL contact
 
+```sql
+
     INSERT INTO contact
     (nom, email, message)
     VALUES
     ('albert', 'albert@nomail.me', 'salut bébert')
 
+```
+
     SI JE VEUX CHANGER LE MAIL ET LE MESSAGE
+
+```sql
 
     UPDATE contact
     SET
@@ -281,13 +367,18 @@ Blog avec sql
     WHERE
     id = 5
 
-
+```
     SI ON VEUT EFFACER LA LIGNE
+
+```sql
 
     DELETE FROM contact
     WHERE id = 5
 
-## PROJET SIT BLOG AVEC SQL
+```
+
+
+## PROJET SITE BLOG AVEC SQL
 
     ON DIT QU'UN CLIENT VEUT UN BLOG
     (Persona => PROFILS VIRTUELS D'UTILISATEUR OU DE CLIENTS...)
