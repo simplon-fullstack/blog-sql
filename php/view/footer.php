@@ -11,6 +11,7 @@
             <ul>
                 <li><a href="admin-blog.php">admin blog</a></li>
             </ul>
+            <img src="assets/images/small-diamond.svg" alt="small-diamond">
         </nav>
     </footer>
 
