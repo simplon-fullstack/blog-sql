@@ -503,7 +503,11 @@ Blog avec sql
                 contenu         TEXT
                 photo           VARCHAR (160)
 
-### INSERT POUR AJOUTER UNE LIGNE
+
+### CREATE: INSERT POUR AJOUTER UNE LIGNE
+
+    https://sql.sh/cours/insert-into
+
 
     INSERT INTO `blog` 
     (`id`, `titre`, `contenu`, `photo`) 
@@ -528,10 +532,138 @@ Blog avec sql
     * UNE FOIS LA REQUETE SQL ECRITE, COPIER DANS L'ONGLET SQL DE PHPMYADMIN ET EXECUTER POUR VERIFIER QUE LA REQUETE SQL FONCTIONNE CORRECTEMENT
 
 
+### DELETE: SUPPRIMER UNE LIGNE DE LA TABLE
+
+    https://sql.sh/cours/delete
+
+    CETTE REQUETE SQL SERT A SUPPRIMER UNE LIGNE
+    (TOUTES LES INFORMATIONS DE LA LIGNE)
+
+    DELETE FROM `blog` 
+    WHERE `blog`.`id` = 2
+
+    * VERSION SIMPLIFIEE
+
+    DELETE FROM blog 
+    WHERE id = 2
+
+    => ON EFFACE TOUTE LA LIGNE DONT LA VALEUR DE id EST 2
+
+    => IMPORTANT: NE PAS OUBLIER LE SELECTEUR AVEC LA CLAUSE WHERE
+    => BIEN CHOISIR LA VALEUR DE id POUR LA LIGNE QU'ON VEUT EFFACER
+
+    * DANGER...
+
+    DELETE FROM blog 
+
+    => CA VA EFFACER TOUTES LES LIGNES
+    => PAR DEFAUT, SQL SELECTIONNE TOUTES LES LIGNES !!!
+
+### UPDATE: CHANGER UNE INFORMATION
+
+    https://sql.sh/cours/update
+
+    * REQUETE SQL COMPLETE
+
+    UPDATE `blog` SET `titre` = 'il pleut ce mardi MODIF', `contenu` = 'c\'est la catastrophe à Marseille, il y a 2cm de pluie MODIF', `photo` = 'assets/images/photo2.jpg' WHERE `blog`.`id` = 1;
+
+    * VERSION SIMPLIFIEE
+
+    UPDATE blog 
+    SET 
+    titre = 'nouveau titre', 
+    contenu = 'nouveau contenu', 
+    photo = 'assets/images/nouvelle-photo.jpg' 
+    WHERE id = 1;
+
+    * ATTENTION: DANGER, IL NE FAUT PAS SE TROMPER NI OUBLIER LE SELECTEUR AVEC LA CLAUSE WHERE
+
+    UPDATE blog 
+    SET 
+    titre = 'nouveau titre', 
+    contenu = 'nouveau contenu', 
+    photo = 'assets/images/nouvelle-photo.jpg' 
 
 
+    => ATTENTION: CETTE REQUETE SANS WHERE VA CHANGER TOUTES LES LIGNES
+
+    * EXERCICE: SI JE VEUX MODIFIER LE TITRE DE LA LIGNE DONT id = 1
+
+    UPDATE blog
+    SET
+    titre = 'nouveau titre modifié'
+    WHERE id = 1
 
 
+## READ: POUR LIRE LES INFORMATIONS
+
+    https://sql.sh/cours/select
+
+
+    * REQUETE BASIQUE QUI RAMENE TOUTES LES LIGNES ET TOUTES LES COLONNES DE LA TABLE blog
+
+
+    SELECT * FROM `blog`
+
+    * VERSION SIMPLIFIEE
+
+    SELECT * FROM blog
+
+    => * SELECTIONNE TOUTES LES COLONNES
+    => ON PEUT PRECISER LE NOM DES COLONNES QUI NOUS INTERESSENT
+
+    SELECT titre, photo FROM blog
+
+    * SI JE VEUX FILTRER LES LIGNES, ON UTILISE LE SELECTEUR AVEC LA CLAUSE WHERE
+
+    SELECT titre, photo FROM blog
+    WHERE id = 1
+
+### ON PEUT DEMANDER A TRIER LES RESULTATS
+
+    * ORDER BY id ASC   => ORDRE CROISSANT
+    * ORDER BY id DESC  => ORDRE DECROISSANT
+
+    SELECT * FROM blog
+    ORDER BY id DESC
+
+    => UTILE POUR AFFICHER LES ARTICLES DE BLOG DU PLUS RECENT AU PLUS ANCIEN
+    => PEUT SE COMBINER AVEC LA CLAUSE WHERE
+
+    SELECT * FROM blog
+    WHERE id > 1
+    ORDER BY id DESC
+
+
+    * ON PEUT DEMANDER A TRIER SUR DIFFERENTES COLONNES
+
+    SELECT * FROM blog
+    ORDER BY titre ASC, id DESC
+
+
+### EXERCICES: CREER PLUSIEURS TABLES SQL
+
+
+    MODELISATION DE LA BASE DE DONNEES
+    => MODELE CONCEPTUEL DES DONNEES (MCD)
+
+    * TABLE SQL newsletter
+        id      INT             INDEX=PRIMARY   A_I
+        nom     VARCHAR(160)
+        email   VARCHAR(160)
+
+    * TABLE SQL contact
+        id      INT             INEX=PRIMARY    A_I
+        nom     VARCHAR(160)
+        email   VARCHAR(160)
+        message TEXT
+
+    * EXERCICES SUR LE C.R.U.D.
+
+    * CREATE: CREER DES REQUETES INSERT POUR AJOUTER DES LIGNES DANS CHAQUE TABLE
+    * DELETE: CREER DES REQUETES DELETE POUR SUPPRIMER DES LIGNES
+    * UPDATE: CREER DES REQUETES UPDATE POUR MODIFIER DES LIGNES
+    * READ: CREER DES REQUETES SELECT POUR AFFICHER DES LIGNES
 
 
 
