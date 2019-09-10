@@ -1,3 +1,13 @@
+header {
+    background-color:#cccccc;
+}
+
 h1 {
     color: red;
+}
+
+header img {
+    max-width:160px;
+    max-height:160px;
+    object-fit:contain;
 }

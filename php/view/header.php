@@ -10,6 +10,7 @@
 </head>
 <body>
     <header>
+        <img src="assets/images/baker.png" alt="logo" title="logo">
         <h1>Projet Blog avec SQL</h1>
         <nav>
             <ul>
