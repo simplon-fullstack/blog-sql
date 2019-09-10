@@ -466,6 +466,72 @@ Blog avec sql
     * CREER DES REQUETES SQL POUR LIRE DES LIGNES DANS CHAQUE TABLE
 
 
+## COURS MARDI SQL
+
+    DEMARRER SON SERVEUR WEB (XAMPP)
+    VERIFIER QUE LE SERVEUR MySQL EST BIEN DEMARRE (2E LIGNE EN VERT)
+
+    DANS LE NAVIGATEUR, ALLER SUR L'URL
+
+    http://localhost/phpmyadmin/
+
+    SI IL Y A BESOIN DE S'IDENTIFIER POUR SE CONNECTER
+    login: root
+    mot de passe:
+    (laisser vide)
+
+    ATTENTION: SUIVANT LES SERVEUS WEB, LE MOT DE PASSE PEUT ETRE DIFFERENT
+    (EXEMPLE:   SUR MAMP C'EST  LOGIN: root ET MOT DE PASSE: root)
+
+
+    CREER LA DATABASE blog-mysql AVEC LE CHARSET utf8mb4_general_ci
+
+    ENSUITE SE PLACER DANS LA DATABASE blog-mysql
+
+    ET CREER LES TABLES
+        newsletter
+        contact
+        blog
+
+    SI ON COMMENCE PAR LA TABLE blog
+
+    PAR CONVENTION: ON METTRA TOUJOURS EN PREMIERE COLONNE
+
+                nom colonne     TYPE    Taille/Valeur   INDEX       A_I
+    LA COLONNE  id              INT                     PRIMARY     AUTO_INCREMENT
+                titre           VARCHAR (160)
+                contenu         TEXT
+                photo           VARCHAR (160)
+
+### INSERT POUR AJOUTER UNE LIGNE
+
+    INSERT INTO `blog` 
+    (`id`, `titre`, `contenu`, `photo`) 
+    VALUES 
+    (NULL, 'il pleut ce mardi', 'c\'est la catastrophe à Marseille, il y a 2cm de pluie', 'assets/images/photo1.jpg');
+
+
+    * VERSION SIMPLIFIEE DE LA REQUETE SQL INSERT INTO
+
+    INSERT INTO blog 
+    (titre, contenu, photo) 
+    VALUES 
+    ('il pleut ce mardi', 'c\'est la catastrophe à Marseille, il y a 2cm de pluie', 'assets/images/photo1.jpg');
+
+    * EXERCICE: CREER LE CODE SQL POUR INSERER UNE DEUXIEME LIGNE
+
+    INSERT INTO blog
+    (titre, contenu, photo)
+    VALUES
+    ('mardi again', 'il pleut toujours', 'assets/images/photo2.jpg')
+
+    * UNE FOIS LA REQUETE SQL ECRITE, COPIER DANS L'ONGLET SQL DE PHPMYADMIN ET EXECUTER POUR VERIFIER QUE LA REQUETE SQL FONCTIONNE CORRECTEMENT
+
+
+
+
+
+
 
 
 
