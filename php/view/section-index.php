@@ -2,7 +2,7 @@
 
         <section>
             <h3>Les Derniers Articles du Blog</h3>
-            <div class="listeArticle">
+            <div class="listeBlog">
 <?php
 // ON VEUT RECUPERER LA LISTE DES ARTICLE DE LA TABLE SQL blog
 // ET ON LES AFFICHERA DANS DES BALISES HTML article
