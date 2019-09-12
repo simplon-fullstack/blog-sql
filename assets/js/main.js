@@ -27,7 +27,7 @@ listeFormAjax.forEach(function(balise){
     // sur l'évenement submit
     balise.addEventListener('submit', function (event){
         // bloquer le formulaire classique
-        // avantage: on en change plus de page
+        // avantage: on ne change plus de page
         event.preventDefault();
         console.log("formulaire bloqué");
         console.log(this);  // this contient la balise form activée
