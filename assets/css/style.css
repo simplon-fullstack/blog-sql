@@ -78,6 +78,10 @@ nav a {
     text-decoration: none;
 }
 
+img {
+    width:100%;
+} 
+
 /* GALERIE */
 
 .listePhoto {
@@ -100,7 +104,11 @@ nav a {
         width: calc(100% / 2);    
         height: calc(100vmin / 2);
     }
-        
+
+    .listeBlog article {
+        width: calc(100% /1 );
+    }
+            
 }
 
 
