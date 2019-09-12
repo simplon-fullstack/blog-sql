@@ -133,7 +133,7 @@ footer img {
 
 
 .page {
-    background: linear-gradient(-200deg, red 0%, orange 50%, yellow 100%);
+    background: linear-gradient(-200deg, #ffffff 0%, #aaaaaa 50%, #666666 100%);
 }
 
 header {
