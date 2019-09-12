@@ -9,16 +9,17 @@
     <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body>
-    <header>
-        <img src="assets/images/baker.png" alt="logo" title="logo">
-        <h1>Projet Blog avec SQL</h1>
-        <nav>
-            <ul>
-                <li><a href="index.php">blog</a></li>
-                <li><a href="contact.php">contact</a></li>
-            </ul>
-        </nav>
-    </header>
-    <main>
+    <div class="page">
+        <header>
+            <img src="assets/images/baker.png" alt="logo" title="logo">
+            <h1>Projet Blog avec SQL</h1>
+            <nav>
+                <ul>
+                    <li><a href="index.php">blog</a></li>
+                    <li><a href="contact.php">contact</a></li>
+                </ul>
+            </nav>
+        </header>
+        <main>
 
     

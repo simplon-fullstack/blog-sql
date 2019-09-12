@@ -111,14 +111,6 @@ h1 {
     color:orange;
 }
 
-header {
-    background-color: #cccccc;
-}
-
-footer {
-    background-color: #aaaaaa;
-}
-
 @media screen and (max-width: 425px) {
 
     .listeBlog article h3 {
@@ -133,12 +125,21 @@ header img {
     object-fit:contain;
 }
 
-footer {
-    background-color:#aaaaaa;
-}
-
 footer img {
     max-width:120px;
     max-height:120px;
     object-fit:contain;
+}
+
+
+.page {
+    background: linear-gradient(-200deg, red 0%, orange 50%, yellow 100%);
+}
+
+header {
+    background-color: #cccccc;
+}
+
+footer {
+    background-color: #aaaaaa;
 }
