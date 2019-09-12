@@ -80,6 +80,12 @@ function construireHtmlArticle (tabArticle)
     // on va utiliser la balise div.listeBlog
     // et on va remplir cette balise avec des articles à partir du tableau
     var baliseListeBlog = document.querySelector('.listeBlog');
+
+    // protection dans le cas 
+    // où la page ne contient pas de balise div.listeBlog
+    if (baliseListeBlog == null)
+        return;     // ON S'ARRETE ICI ET ON NE FAIT LE RESTE DU CODE
+
     // effacer la liste d'avant
     baliseListeBlog.innerHTML = '';
 
