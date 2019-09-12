@@ -32,7 +32,7 @@ listeFormAjax.forEach(function(balise){
         console.log("formulaire bloqué");
         console.log(this);  // this contient la balise form activée
         // perdu: on n'envoie plus le formulaire
-        // ajouter ajax pour envoyer le formulaire
+        // solution: ajouter ajax pour envoyer le formulaire
         // récupérer les infos du formulaire
         // et ensuite, je vais les envoyer avec fetch
         // https://developer.mozilla.org/fr/docs/Web/API/Fetch_API/Using_Fetch
