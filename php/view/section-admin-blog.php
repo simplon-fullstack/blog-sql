@@ -32,7 +32,7 @@
         </section>
 
         <section>
-            <h3>liste des article</h3>
+            <h3>liste des articles</h3>
             <div class="listeBlog">
                 <!-- on veut afficher les articles avec JS -->
             </div>
