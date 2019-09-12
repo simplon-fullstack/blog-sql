@@ -2,7 +2,7 @@
 
         <section>
             <h3>Formulaire de contact</h3>
-            <form method="POST" action="api-json.php">
+            <form class="ajax" method="POST" action="api-json.php">
                 <label>
                     <span>nom</span>
                     <!-- CONSEIL: DONNER EN name LE NOM DE LA COLONNE SQL -->

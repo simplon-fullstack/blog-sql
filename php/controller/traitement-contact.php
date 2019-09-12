@@ -35,7 +35,10 @@ $message
 
 CODETEXT;
         @mail("webmaster@monsite.fr", "nouveau message contact", $ligne);
-    
+        
+        // DONNER UN MESSAGE DE CONFIRMATION
+        $confirmation = "Merci de votre message $nom ($email)";  
+
         // STOCKER LES INFOS 
         // => DANS LA TABLE SQL contact
 

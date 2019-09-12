@@ -14,6 +14,14 @@ insererLigneTable("blog", [
     "photo"     => $photo,
 ]);
 
+
+// DONNER LE MESSAGE DE CONFIRMATION
+$confirmation = "article publié ($titre)";
+
+// JE PEUX DONNER LA LISTE DES ARTICLES DU BLOG
+$tabLigne = lireTableBlog();
+
+
 /*
 insererLigneBlog([
     "titre"     => $titre,

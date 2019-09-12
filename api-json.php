@@ -23,3 +23,21 @@ if ($idFormulaire != "")
     }
 
 }
+
+// JE VAIS AJOUTER DU CODE PHP POUR PRODUIRE DU TEXTE JSON
+// https://www.php.net/manual/fr/function.json-encode.php
+// DANS PHP SI ON A UN TABLEAU ASSOCIATIF
+// LA FONCTION json_encode PRODUIT UN TEXTE AU FORMAT JSON 
+// A PARTIR DE CE TABLEAU ASSOCIATIF
+
+$tabAssoJson = [
+    "cle1"          => "valeur1",
+    "cle2"          => "valeur12",
+    "confirmation"  => $confirmation ?? "",
+    "tabArticle"    => $tabLigne ?? [],
+];
+
+$texteJson = json_encode($tabAssoJson, JSON_PRETTY_PRINT);
+
+// afficher le texte json
+echo $texteJson;

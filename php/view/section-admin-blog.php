@@ -2,7 +2,7 @@
 
         <section>
             <h3>BACK OFFICE DU BLOG</h3>
-            <form action="api-json.php" method="POST">
+            <form class="ajax" action="api-json.php" method="POST">
                 <!--PARTIE PUBLIQUE -->
                 <label>
                     <span>titre</span>
@@ -29,4 +29,11 @@
                 </div>
                 <input type="hidden" name="idFormulaire" value="blog">
             </form>
+        </section>
+
+        <section>
+            <h3>liste des article</h3>
+            <div class="listeBlog">
+                <!-- on veut afficher les articles avec JS -->
+            </div>
         </section>
